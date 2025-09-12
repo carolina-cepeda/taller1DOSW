@@ -4,10 +4,10 @@
 ___
 ## Tecnologías usadas:
 * Java 17
-*  Spring Boot 3.2
+* Spring Boot 3.2
 * Maven 3.9
 * Junit 5
-
+* Sonarqube
 
 ## Análisis de requerimientos
 ____
@@ -37,7 +37,7 @@ Basado en los requerimientos, se observan los siguientes casos de uso:
 
 
 #### Diagrama de clases
-Se toma como clase principa****l al producto, ya que el sistema
+Se toma como clase principal al producto, ya que el sistema
 gira en torno a la gestión de estos. Se usa a ServicioProducto como el
 contenedor de la lógica del negocio - añadir producto, actualizar stock, listar todo-
 que tiene una referencia a RepositorioProducto para guardar y consultar datos, también tiene una
@@ -81,13 +81,30 @@ ___
 
 ## Pruebas
 ___
+### Pruebas unitarias
 
+![img.png](docs/imagenes/pruebas.png)
+
+### Pruebas desde perspectiva del usuario
+Se hacen pruebas para las distintas funciones (post, get, put) usando la API REST
+curl.
+Iniciamos la aplicación con Spring Boot
+![paso1.png](docs/imagenes/paso1.png)
+
+Probamos la añadidura de un producto
+![post.png](docs/imagenes/post.png)
+
+Probamos añadir, consultar y modificar un producto:
+![pruebageneral.png](docs/imagenes/pruebageneral.png)
+
+Observamos que los agentes advertencia y log muestran correctamente los mensajes
+![respuestasAgentes.png](docs/imagenes/respuestasAgentes.png)
 ## Uso del sistema por el usuario
 ___
 #### 1. Iniciar la aplicación Spring boot  con mvn spring-boot: run en una terminal en la raiz del proyecto
 
 #### 2. Se puede usar la aplicación usando curl, en el caso de windows, se puede usar la Command Prompt (CMD) de la siguiente manera
-( se aclara el uso de una terminal diferente a la que se usó en el paso 1)
+(se aclara el uso de una terminal diferente a la que se usó en el paso 1)
 * * POST - Crear un nuevo producto con formato JSON
 
     curl -X POST http://localhost:8080/api/productos ^
