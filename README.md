@@ -16,6 +16,11 @@ ____
 * Modificar Stock de productos
 * Notificar los cambios a agentes log y advertencia.
 
+## Plan de trabajo
+EPIC: Gestión de inventario y notificaciones de stock
+
+
+
 ## Diseño del sistema
 ___
 ### Diagramas
@@ -32,7 +37,7 @@ Basado en los requerimientos, se observan los siguientes casos de uso:
 
 
 #### Diagrama de clases
-Se toma como clase principal al producto, ya que el sistema
+Se toma como clase principa****l al producto, ya que el sistema
 gira en torno a la gestión de estos. Se usa a ServicioProducto como el
 contenedor de la lógica del negocio - añadir producto, actualizar stock, listar todo-
 que tiene una referencia a RepositorioProducto para guardar y consultar datos, también tiene una
@@ -53,13 +58,13 @@ lanza una alerta si la cantidad baja de un límite.
 ![diagramaclasest1.png](docs/UML/diagramaclasest1.png)
 
 
-#### Patrones aplicados
+### Patrones aplicados
 Se aplica el patrón es Observer porque el sistema
 notifica a los observadores del Stock (StockObserver) cuando cambia
 el Stock. A su vez, se usa Repository para acceder a datos de forma desacoplada ( y no
 dependan de la implementación actual) y se usan DTOs para transportar los datos en la API.
 
-#### Principios SOLID
+### Principios SOLID
 * **S**: cada clase tiene una sola responsabilidad
 * **O**: El sistema permite extender, por ejemplo, nuevos observadores
 sin tener que modificar las clases ya existentes.
@@ -68,6 +73,10 @@ contratos ( RepositorioProducto).
 * **I**: Se hace uso de interfaces pequeñas y específicas (ObservadorStock, RepositorioProducto)
 * **D**: El servicio depende de las abstracciones ( y no de implementaciones concretas.
 
+## Cobertura y calidad del código
+___
+![sonarqube.png](docs/imagenes/sonarqube.png)
+![coberturajacoco.png](docs/imagenes/coberturajacoco.png)
 
 ## Uso del sistema por el usuario
 ___
