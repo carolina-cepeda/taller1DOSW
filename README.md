@@ -78,5 +78,29 @@ ___
 ![sonarqube.png](docs/imagenes/sonarqube.png)
 ![coberturajacoco.png](docs/imagenes/coberturajacoco.png)
 
+
+## Pruebas
+___
+
 ## Uso del sistema por el usuario
 ___
+#### 1. Iniciar la aplicación Spring boot  con mvn spring-boot: run en una terminal en la raiz del proyecto
+
+#### 2. Se puede usar la aplicación usando curl, en el caso de windows, se puede usar la Command Prompt (CMD) de la siguiente manera
+( se aclara el uso de una terminal diferente a la que se usó en el paso 1)
+* * POST - Crear un nuevo producto con formato JSON
+
+    curl -X POST http://localhost:8080/api/productos ^
+-H "Content-Type: application/json" ^
+-d "{\"nombre\": \"Xbox One S\", \"categoria\": \"Consolas\", \"precio\": 299.99, \"cantidad\": 10}"
+
+* * PUT actualizar stock de producto, manejando formato JSON
+
+    curl -X PUT http://localhost:8080/api/productos/1/stock ^
+    -H "Content-Type: application/json" ^
+    -d "{\"cantidad\": 3}"
+
+* * GET - listar todos los productos
+    curl -X GET http://localhost:8080/api/productos
+
+#### 3.  Los mensajes de los log se mostrarán en la terminal del paso 1 y en caso de querer detener la aplicación se hace uso de ctrl +c.
