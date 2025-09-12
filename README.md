@@ -50,7 +50,7 @@ mensajes en consola dependiendo de ciertas condiciones; para la implementación
 AgenteLog escribe en consola cada cambio en el stock, mientras que, AgenteAdvertencia
 lanza una alerta si la cantidad baja de un límite.
 
-![diagramaClases.png](docs/UML/diagramaClases.png)
+![diagramaclasest1.png](docs/UML/diagramaclasest1.png)
 
 
 #### Patrones aplicados
